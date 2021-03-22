@@ -1,0 +1,85 @@
+.smart-assistant {
+  #decoration {
+    @include breakpoint($ipad) {
+      display: none;
+    }
+  }
+  .flexContainer {
+    &--fullScreen {
+      max-width: 100%;
+
+      div {
+        width: 100%;
+        height: 480px;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    &--fullHeight {
+      div {
+        height: 784px;
+      }
+    }
+  }
+
+  .wrapper {
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .flex-image {
+      &--cover {
+        background-size: cover;
+      }
+
+      @include breakpoint($ipad) {
+        flex: 1 1 100%;
+        max-height: 100%;
+        height: 60vw;
+      }
+      flex: 1 1 100%;
+    }
+
+    .txt {
+      @include breakpoint($ipad) {
+        flex: 1 1 100%;
+        text-align: center;
+      }
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      padding: 10vw 5vw;
+
+      h2 {
+        color: #000;
+        font-size: 3rem;
+      }
+    }
+
+    img {
+      @include breakpoint($iphone){
+        max-width: 85%;
+      }
+      &.smallerImg {
+        max-width: 600px;
+        @include breakpoint($iphone){
+          max-width: 85%;
+        }
+      }
+
+      flex: 0 1 auto;
+      max-width: 800px;
+      height: auto;
+      width: 100%;
+      margin: 30px auto;
+    }
+  }
+
+  background: #fff;
+  width: 100%;
+  position: relative;
+  padding: 24px 0 0;
+}

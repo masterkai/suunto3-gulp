@@ -1,0 +1,125 @@
+.features {
+  $watchSize: 500px;
+  padding: 60px 0;
+  background-color: $featuresBG;
+  .flexContainer {
+    align-items: center;
+
+    .watchBox {
+      @include breakpoint($ipad) {
+        background-size: 82%;
+        max-height: 100%;
+        width: 100%;
+        flex: unset;
+        margin-bottom: -50px;
+      }
+      flex: 1 1 50%;
+      display: flex;
+      overflow: hidden;
+      .watch {
+        //&.active {
+        //  display: block;
+        //  opacity: 1;
+        //}
+        opacity: 0;
+        display: none;
+        flex: 1 1 100%;
+        height: $watchSize;
+        width: $watchSize;
+        background-position: center;
+        background-size: 68%;
+        background-repeat: no-repeat;
+        transition: opacity 1s ease-in;
+      }
+    }
+
+    .contentBox {
+      @include breakpoint($ipad) {
+        flex: 1 1 100%;
+        padding: 0 20px;
+        text-align: center;
+      }
+      flex: 0 1 50%;
+      .watchName {
+        font-weight: 700;
+        font-size: 2.875rem;
+      }
+      .title {
+        @include breakpoint($ipad) {
+          font-size: 1.65rem;
+          margin-bottom: 40px;
+        }
+        line-height: 1.375;
+        font-size: 2.375rem;
+        color: $title;
+        margin-bottom: 20px;
+      }
+      p {
+        max-width: 600px;
+        text-align: left;
+        line-height: 1.8;
+      }
+    }
+    &--featureTop {
+      @include breakpoint($ipad) {
+        flex-direction: column-reverse;
+      }
+    }
+    &--feature {
+      @include breakpoint($ipad) {
+        justify-content: space-evenly;
+        padding: 0 20px;
+      }
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      .feature {
+        &.active {
+          color: #000;
+          img {
+            opacity: 1;
+          }
+        }
+        @include breakpoint($ipad) {
+          flex: 1 1 25%;
+        }
+        @include breakpoint($iphone) {
+          margin-bottom: 24px;
+        }
+        &:hover {
+          img {
+            opacity: 1;
+          }
+          transform: translateY(-20px);
+          color: #000;
+        }
+        transition: all 0.15s ease-out;
+        cursor: pointer;
+        color: lighten($featureBtn, 18%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img {
+          @include breakpoint($iphone){
+            $iconSize:56px;
+            width: $iconSize;
+            height: $iconSize;
+          }
+          $iconSize:82px;
+          width: $iconSize;
+          height: $iconSize;
+          margin-bottom: 12px;
+          opacity: 0.35;
+        }
+        .desc {
+          font-size: 1rem;
+          line-height: 1.375;
+          text-align: center;
+          max-width: 112px;
+          color: inherit;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+body.fixed-nav {
+  nav {
+    box-shadow: rgba($color: #000000, $alpha: 0.1);
+    position: fixed;
+    z-index: 99;
+  }
+}
+
+nav {
+  top: 0;
+  width: 100%;
+  background-color: #3f3f3f;
+
+  ul {
+    max-width: 870px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    li {
+      a {
+        @include breakpoint($ipad) {
+          font-size: 0.6rem;
+        }
+        color: rgba($color: white, $alpha: 0.5);
+        text-decoration: none;
+      }
+
+      &.active {
+        a {
+          color: rgba($color: white, $alpha: 1);
+        }
+      }
+
+      &:hover {
+        a {
+          color: rgba($color: white, $alpha: 1);
+        }
+      }
+
+      @include breakpoint($ipad) {
+        text-align: center;
+        padding: 10px 0;
+        width: 20%;
+        line-height: 1;
+      }
+      cursor: pointer;
+      padding: 10px;
+      list-style: none;
+      color: rgba($color: white, $alpha: 0.5);
+      transition: color 0.15s ease-in-out;
+    }
+  }
+}

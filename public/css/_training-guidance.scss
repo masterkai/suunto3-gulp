@@ -1,0 +1,10 @@
+.training-guidance {
+  padding: 60px 0;
+  .flexContainer {
+    &--fullScreen {
+      display: flex;
+      align-items: baseline;
+      max-width: 100%;
+    }
+  }
+}

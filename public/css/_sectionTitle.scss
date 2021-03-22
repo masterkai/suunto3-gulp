@@ -1,0 +1,24 @@
+.sectionTitle {
+  .show-sm {
+    display: none;
+    @include breakpoint($iphone) {
+      display: block;
+    }
+  }
+  @include breakpoint($ipad) {
+    font-size: 1.65rem;
+    line-height: 1.5;
+  }
+  font-weight: 700;
+  margin: 0 auto;
+  text-align: center;
+  color: $title;
+  padding: 20px;
+  font-size: 2.375rem;
+}
+#activeTitle {
+  @include breakpoint($ipad) {
+    height: 88px;
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,13 @@
+$ipad: max-width 768px;
+$iphone: max-width 500px;
+$between: 768px 980px;
+$sm: min-width 768px;
+$title: #707070;
+$color_deep-gray: $title;
+$underLine: $title;
+$headerColor: #f4f4f4;
+$featuresBG: #f7f7f7;
+$featureBtn: #999999;
+body {
+  font-family: "Microsoft YaHei","Noto Sans TC", 'Source Sans Pro', Helvetica, Helvetica Neue, Arial, sans-serif;
+}

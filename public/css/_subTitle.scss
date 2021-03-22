@@ -1,0 +1,12 @@
+.subTitle {
+  @include breakpoint($ipad) {
+    font-size: 1rem;
+    max-width: 85%;
+  }
+  margin: 0 auto 30px;
+  text-align: center;
+  font-size: 1.375em;
+  line-height: 1.5;
+  color: $title;
+  max-width: 1040px;
+}

@@ -1,0 +1,129 @@
+.Empy-mask {
+  .Empy-modal {
+    .card-title {
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      line-height: 20px;
+      max-height: 20px;
+      overflow: hidden;
+    }
+
+    p.card-desc {
+      color: $color_deep-gray;
+      font-weight: 300;
+      font-size: .9rem;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-height: 20px;
+      max-height: 60px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .Empy-modal-header {
+      &--noContentOnlyCloseBtn {
+        padding: 0;
+        border-bottom: unset;
+        position: relative;
+        .closeBtn {
+          &:before {
+            content: '\2716';
+            line-height: 48px;
+          }
+          cursor: pointer;
+          border-radius: 50%;
+          border: none;
+          position: absolute;
+          top: -24px;
+          right: -24px;
+          padding: 0;
+          margin: 0;
+          line-height: 0;
+          height: 48px;
+          width: 48px;
+          font-size: 2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      border-bottom: 1px solid lighten($underLine,20%);
+    }
+
+    .Empy-modal-body {
+      iframe {
+        width: 960px;
+        height: 720px;
+        @include breakpoint(max-width 992px){
+          width: 640px;
+          height: 480px;
+        }
+        @include breakpoint($ipad){
+          width: 420px;
+          height: 315px;
+        }
+      }
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--news-share {
+      width: 500px;
+      height: auto;
+    }
+    &--news-subscribe,&--youtube {
+      width: auto;
+      height: auto;
+    }
+
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    //overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+  }
+
+  &.show {
+    display: block;
+  }
+
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.socialIconContainer {
+  display: flex;
+
+  .socialLink {
+    .socialLinkName {
+      font-size: .8rem;
+    }
+
+    cursor: pointer;
+    width: 80px;
+    margin-right: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

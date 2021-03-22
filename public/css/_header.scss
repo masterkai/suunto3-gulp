@@ -1,0 +1,67 @@
+#header {
+  .mainCopy {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    .group {
+      @include breakpoint($between) {
+        justify-content: center;
+        margin-right: unset;
+      }
+      @include breakpoint($ipad) {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-20%);
+        padding: 0 40px;
+        margin-right: unset;
+        margin-bottom: 48px;
+      }
+      .copy {
+        margin-top: 24px;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .watchName {
+          font-weight: 700;
+          font-size: 1.875rem;
+          margin-bottom: 12px;
+        }
+        .slogan {
+          $min_width: 320px;
+          $max_width: 1200px;
+          $min_font: 16px;
+          $max_font: 32px;
+          @include fluid-type($min_width, $max_width, $min_font, $max_font);
+        }
+      }
+      img {
+        width: 100%;
+      }
+      flex: 0 1 auto;
+      margin-right: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @include breakpoint($between) {
+      justify-content: center;
+    }
+    @include breakpoint($ipad) {
+      align-items: flex-end;
+    }
+  }
+  background-position: center top;
+  background-size: cover;
+  height: calc(100vh - 150px);
+  @include breakpoint($sm) {
+    background-image: url(https://img.empyrean.tw/ED6EEFA1-1B17-4154-99E3-EA83172349F0.png);
+  }
+  @include breakpoint($ipad) {
+    background-image: url(https://img.empyrean.tw/267CF833-B1CE-48ED-A496-8DFCCDD6993F.png);
+    height: 100vh;
+  }
+}

@@ -1,0 +1,24 @@
+.btn {
+  @include breakpoint('xs') {
+    padding: 0 20px;
+    line-height: 35px;
+    font-size: 0.9rem;
+  }
+  &--outline {
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+    border: 1px solid black;
+  }
+  font-weight: 900;
+  border-radius: 30px;
+  padding: 0 30px;
+  cursor: pointer;
+  width: auto;
+  line-height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 25px;
+}

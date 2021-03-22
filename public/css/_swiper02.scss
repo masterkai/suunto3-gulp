@@ -1,0 +1,240 @@
+.training-guidance {
+  $size: 100%;
+  position: relative;
+  width: $size;
+  height: $size;
+  overflow: hidden;
+
+  .wrapper {
+    margin-top: 24px;
+    position: relative;
+
+    #slideContainer2 {
+      display: flex;
+      transform: translateX(0);
+      transition: transform 0.5s ease-in-out;
+
+      .slide {
+        &:nth-child(6) {
+          .slide-wrapper {
+            .slide2-left {
+              @include breakpoint($ipad) {
+                background-position: center top;
+              }
+            }
+          }
+        }
+
+        &:last-child {
+          .slide-wrapper {
+            .slide2-right {
+              img {
+                @include breakpoint($ipad) {
+                  top: 170px;
+                  width: 45%;
+                }
+                @include breakpoint($iphone) {
+                  top: 140px;
+                  width: 35%;
+                }
+              }
+            }
+          }
+        }
+
+        flex: 1 0 100%;
+        width: 100%;
+        background-color: white;
+
+        .slide-wrapper {
+          @include breakpoint($ipad) {
+            flex-direction: column;
+            align-items: center;
+          }
+          @include breakpoint($iphone) {
+            height: 600px;
+          }
+          height: 720px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .slide2-left {
+            @include breakpoint($ipad) {
+              flex: 0 1 23.5vh;
+              width: 100%;
+              height: 250px !important;
+            }
+            flex: 1 1 50vw;
+            height: 100%;
+            opacity: 1;
+            display: flex;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+
+          .slide2-right {
+            img {
+              @include breakpoint($ipad) {
+                position: absolute;
+                z-index: 99;
+                width: 52vw;
+                height: auto;
+                top: 200px;
+              }
+              @include breakpoint($iphone) {
+                top: 150px;
+              }
+              padding-left: 4vw;
+              padding-right: 4vw;
+              width: auto;
+              height: 420px;
+            }
+
+            .slide-txt {
+              width: 100%;
+
+              h3 {
+                padding: 0 4vw;
+                color: inherit;
+                margin-bottom: 7px;
+              }
+
+              h2 {
+                &.offsetLeft {
+                  transform: translateX(-10px);
+                }
+
+                @include breakpoint($ipad) {
+                  padding: 1vh 4vw;
+                }
+                @include breakpoint($iphone) {
+                  font-size: 1.5rem;
+                }
+                padding: 2vh 4vw;
+                font-size: 1.75rem;
+                color: inherit;
+                line-height: 1.2;
+              }
+
+              p {
+                @include breakpoint($ipad) {
+                  font-size: .9rem;
+                }
+                padding: 0 4vw;
+                font-size: 1rem;
+                color: inherit;
+                line-height: 1.375;
+              }
+            }
+
+            flex: 0 1 50vw;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-direction: column;
+            color: $title;
+          }
+        }
+      }
+    }
+
+    .buttons-container {
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+
+      #left2 {
+        position: relative;
+
+        &:before {
+          width: 9px;
+          height: 56px;
+          content: "\008B";
+
+        }
+      }
+
+      #right2 {
+        position: relative;
+
+        &:before {
+          height: 56px;
+          content: "\009B";
+
+        }
+      }
+
+      .btn {
+
+        @include breakpoint($ipad) {
+          margin: 10px;
+        }
+
+        &:hover {
+          opacity: 0.4;
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        cursor: pointer;
+        color: #5e5e5e;
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-width: unset;
+        border-style: unset;
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        padding: 0.5rem;
+      }
+    }
+
+    .pagination {
+      width: auto;
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+
+      .circle {
+        &:before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 18px;
+          height: 18px;
+          transform: translate(-50%, -50%);
+          border: 0 solid silver;
+          border-radius: 50%;
+        }
+
+        &.active {
+          opacity: 1;
+
+          &:before {
+            border: 1px solid #535150;
+          }
+        }
+
+        margin: 0 9px;
+        position: relative;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #758a94;
+        opacity: 0.4;
+      }
+    }
+  }
+
+}
